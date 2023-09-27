@@ -46,7 +46,6 @@ public class C02_BeforeAfterNotasyonlari {
     }
 
 
-
     @Test
     public void amazonTest(){
         // 1- Amazon anasayfaya gidip, url'in amazon icerdigini test edin,sayfayi kapatin
