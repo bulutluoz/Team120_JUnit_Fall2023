@@ -35,7 +35,7 @@ public class C02_Iframe extends TestBase {
         driver.switchTo().frame(guruIframeElementi);
         driver.findElement(By.xpath("//img[@src='Jmeter720.png']")).click();
 
-    bekle(3);
+        bekle(3);
     }
 
 }
