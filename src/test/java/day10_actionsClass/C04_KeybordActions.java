@@ -1,5 +1,6 @@
 package day10_actionsClass;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -39,6 +40,7 @@ public class C04_KeybordActions extends TestBase {
         String actualSonucYazisi = driver.findElement(By.xpath("//h1[@class='a-size-base s-desktop-toolbar a-text-normal']"))
                                     .getText();
 
+        Assert.assertTrue(actualSonucYazisi.contains(expectedIcerik));
         bekle(3);
     }
 }
