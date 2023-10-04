@@ -67,8 +67,40 @@ public class C01_Cookies extends TestBase {
 
         //7- ismi skin olan cookie’yi silin ve silindigini test edin
 
+        driver.manage().deleteCookieNamed("skin");
+
+        System.out.println("========== skin silindikten sonra========== ");
+        cookieSeti =  driver.manage().getCookies();
+        siraNo= 1;
+        for (Cookie each : cookieSeti
+        ) {
+            System.out.println(siraNo + "  -   " + each);
+            siraNo++;
+        }
+
+
+        boolean skinSilindiMi = true;
+
+        for (Cookie each : cookieSeti
+             ) {
+            if (each.getName().equals("skin")){
+                skinSilindiMi = false ;
+            }
+        }
+        // en sonda testin passed olmasi icin skinSilindiMi ===> true olmali
+
+        Assert.assertTrue(skinSilindiMi);
 
         //8- tum cookie’leri silin ve silindigini test edin
+
+        driver.manage().deleteAllCookies();
+
+        cookieSeti =  driver.manage().getCookies();
+
+        int expectedCookieSetiSize = 0 ;
+        int actualCookieSetiSize = cookieSeti.size();
+
+        Assert.assertEquals(expectedCookieSetiSize,actualCookieSetiSize);
 
         bekle(2);
     }
