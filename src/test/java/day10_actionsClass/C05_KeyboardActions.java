@@ -14,10 +14,13 @@ public class C05_KeyboardActions extends TestBase {
     public void test01(){
         //1- https://www.facebook.com adresine gidelim
         driver.get("https://www.facebook.com");
+        bekle(2);
         //2- Cookies kabul edin
         driver.findElement(By.xpath("//button[@title='Allow all cookies']")).click();
+        bekle(2);
         //3- Yeni hesap olustur butonuna basalim
         driver.findElement(By.xpath("//*[@*='open-registration-form-button']")).click();
+        bekle(2);
         //4- Ad, soyad, mail ve sifre kutularina deger yazalim ve kaydol tusuna basalim
         WebElement isimKutusu= driver.findElement(By.name("firstname"));
 
@@ -47,10 +50,10 @@ public class C05_KeyboardActions extends TestBase {
                 .sendKeys(Keys.TAB)
                 .sendKeys(Keys.ARROW_RIGHT)
                 .perform();
-
+        bekle(3);
         //5- Kaydol tusuna basalim
         driver.findElement(By.xpath("//button[@name='websubmit']")).click();
 
-        bekle(10);
+        bekle(15);
     }
 }

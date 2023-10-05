@@ -13,6 +13,7 @@ public class C03_FileUploadTesti extends TestBase {
 
         //https://the-internet.herokuapp.com/upload adresine gidelim
         driver.get("https://the-internet.herokuapp.com/upload");
+        bekle(2);
         //chooseFile butonuna basalim
         //text.txt dosyasini secelim.
         /*
@@ -31,6 +32,7 @@ public class C03_FileUploadTesti extends TestBase {
         String dinamikDosyaYolu = System.getProperty("user.dir") + "/src/test/java/day11_fileTestleri_Waits/text.txt";
 
         uploadButtonElementi.sendKeys(dinamikDosyaYolu);
+        bekle(3);
 
         //Upload butonuna basalim.
         driver.findElement(By.id("file-submit")).click();
@@ -38,6 +40,6 @@ public class C03_FileUploadTesti extends TestBase {
 
         WebElement fileUploadedElementi = driver.findElement(By.tagName("h3"));
         Assert.assertTrue(fileUploadedElementi.isDisplayed());
-
+        bekle(3);
     }
 }
